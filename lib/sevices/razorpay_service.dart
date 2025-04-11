@@ -47,7 +47,7 @@ class RazorpayService {
     String email = userData?['email'] ?? "user@example.com";
 
     var options = {
-      "key": "rzp_test_AOMZZ2JTtSgMcS",
+      "key": "rzp_test_XXXXXXXX",
       "amount": amount.toInt(),
       "currency": "INR",
       "name": "BluxKart",
