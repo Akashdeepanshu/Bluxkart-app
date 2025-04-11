@@ -1,0 +1,2 @@
+C:/orignal_Bluxkart/bluxkart/android/app/.cxx/RelWithDebInfo/3rps1n4a/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/orignal_Bluxkart/bluxkart/android/app/.cxx/RelWithDebInfo/3rps1n4a/arm64-v8a/CMakeFiles/rebuild_cache.dir

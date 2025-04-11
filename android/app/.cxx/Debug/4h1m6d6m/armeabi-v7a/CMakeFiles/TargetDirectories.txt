@@ -1,0 +1,2 @@
+C:/orignal_Bluxkart/bluxkart/android/app/.cxx/Debug/4h1m6d6m/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/orignal_Bluxkart/bluxkart/android/app/.cxx/Debug/4h1m6d6m/armeabi-v7a/CMakeFiles/rebuild_cache.dir

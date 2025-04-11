@@ -1,0 +1,2 @@
+C:/Users/akash/OneDrive/Desktop/bluxkart/android/app/.cxx/RelWithDebInfo/19j74ze1/x86/CMakeFiles/edit_cache.dir
+C:/Users/akash/OneDrive/Desktop/bluxkart/android/app/.cxx/RelWithDebInfo/19j74ze1/x86/CMakeFiles/rebuild_cache.dir
