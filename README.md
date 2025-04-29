@@ -1,16 +1,24 @@
-# bluxkart
+# BluxKart App
 
-A new Flutter project.
+Welcome to the **BluxKart App**, designed to provide a seamless shopping experience for users. Browse through a variety of products, add them to your cart, and complete your purchase with ease.
 
-## Getting Started
+## Features:
+- Browse and search products
+- View detailed product descriptions and images
+- Add products to the shopping cart
+- Secure payment gateway integration (Razorpay)
+- View order history and manage addresses
 
-This project is a starting point for a Flutter application.
+## Technologies Used:
+- **Flutter** for frontend development
+- **Firebase** for authentication and real-time data
+- **Razorpay** and **PayPal** for payment gateway integration
+- **Firestore** for database (products, orders, user data)
+- **Firebase Storage** for image storage
 
-A few resources to get you started if this is your first Flutter project:
+### Prerequisites
+Before you begin, ensure you have the following installed:
+- **Flutter** (Make sure you have Flutter SDK installed and configured)
+- **Dart** (Comes with Flutter)
+- **Android Studio** or **Visual Studio Code** (For development)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
