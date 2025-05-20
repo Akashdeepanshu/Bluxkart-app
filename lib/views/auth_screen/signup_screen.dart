@@ -21,8 +21,9 @@ class _SignupScreenState extends State<SignupScreen> {
 
   bool? isCheck = false;
   var controller = Get.put(authController());
+  var isPasswordVisible = false.obs;
 
-  //text controller
+
 
   var nameController = TextEditingController();
   var emailController = TextEditingController();
@@ -58,7 +59,48 @@ class _SignupScreenState extends State<SignupScreen> {
                           10.heightBox,
                           customTextField(hint: passwordHint, title: password, controller: passwordController,isPass: true),
                           10.heightBox,
-                          customTextField(hint: passwordHint, title: retypePassword,controller: passwordRetypeController,isPass: true),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Retype Password",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                ),
+                              ),
+                              const SizedBox(height: 8),
+                              TextFormField(
+                                controller: passwordRetypeController,
+                                obscureText: !isPasswordVisible.value,
+                                decoration: InputDecoration(
+                                  labelText: "*******",
+                                  labelStyle: const TextStyle(color: Colors.white),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(color: Colors.grey),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: const BorderSide(color: Colors.grey),
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  fillColor: Colors.grey,
+                                  filled: true,
+                                  border: OutlineInputBorder(),
+                                  suffixIcon: IconButton(
+                                    icon: Icon(
+                                      isPasswordVisible.value ? Icons.visibility : Icons.visibility_off,
+                                      color: Colors.white,
+                                    ),
+                                    onPressed: () {
+                                      isPasswordVisible.toggle();
+                                    },
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+
                           10.heightBox,
                           Row(
                               children: [
@@ -133,7 +175,7 @@ class _SignupScreenState extends State<SignupScreen> {
                               }
                               catch(e){
                                 auth.signOut();
-                                VxToast.show(context, msg: e.toString());
+                                VxToast.show(context, msg: "Fill all the fields");
                                 controller.isloading(false);
                               }
                             }

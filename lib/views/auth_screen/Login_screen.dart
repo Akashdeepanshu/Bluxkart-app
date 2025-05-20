@@ -26,6 +26,8 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     var controller = Get.put(authController());
+    var isPasswordVisible = false.obs;
+
 
 
 
@@ -54,7 +56,45 @@ class _LoginScreenState extends State<LoginScreen> {
 
                          customTextField(hint: emailHint, title: email,isPass: false,controller: controller.emailController),
                          10.heightBox,
-                         customTextField(hint: passwordHint, title: password,isPass: true,controller: controller.passwordController),
+                         Obx(() {
+                           return Column(
+                             crossAxisAlignment: CrossAxisAlignment.start,
+                             children: [
+                               Text(password, style: TextStyle(fontWeight: FontWeight.bold)),
+                               5.heightBox,
+                               TextFormField(
+                                 controller: controller.passwordController,
+                                 obscureText: !isPasswordVisible.value,
+                                 decoration: InputDecoration(
+                                   labelText: "*******",
+                                   labelStyle: const TextStyle(color: Colors.white),
+                                   enabledBorder: OutlineInputBorder(
+                                     borderSide: const BorderSide(color: Colors.grey),
+                                     borderRadius: BorderRadius.circular(12),
+                                   ),
+                                   focusedBorder: OutlineInputBorder(
+                                     borderSide: const BorderSide(color: Colors.grey),
+                                     borderRadius: BorderRadius.circular(12),
+                                   ),
+                                   fillColor: Colors.grey,
+                                   filled: true,
+                                   border: OutlineInputBorder(),
+                                   suffixIcon: IconButton(
+                                     icon: Icon(
+                                       isPasswordVisible.value ? Icons.visibility : Icons.visibility_off,
+                                       color: Colors.white,
+                                     ),
+
+                                     onPressed: () {
+                                       isPasswordVisible.toggle();
+                                     },
+                                   ),
+                                 ),
+                               ),
+                             ],
+                           );
+                         }),
+
                          5.heightBox,
                          controller.isloading.value ? CircularProgressIndicator(
                            valueColor: AlwaysStoppedAnimation(Colors.orangeAccent),

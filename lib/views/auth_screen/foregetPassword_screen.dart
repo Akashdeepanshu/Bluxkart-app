@@ -33,7 +33,7 @@ class ForgotPasswordScreen extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
-                color: Colors.black.withOpacity(0.75),
+                color: Colors.white,
                 borderRadius: BorderRadius.circular(16),
                 border: Border.all(color: Colors.white24),
                 boxShadow: [
@@ -49,7 +49,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                 children: [
                   "Enter your email to receive a reset link"
                       .text
-                      .white
+                      .black
                       .size(18)
                       .semiBold
                       .center
@@ -61,16 +61,16 @@ class ForgotPasswordScreen extends StatelessWidget {
                     style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                       labelText: "Email",
-                      labelStyle: const TextStyle(color: Colors.white70),
+                      labelStyle: const TextStyle(color: Colors.white),
                       enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.white30),
+                        borderSide: const BorderSide(color: Colors.grey),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.white),
+                        borderSide: const BorderSide(color: Colors.grey),
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      fillColor: Colors.white10,
+                      fillColor: Colors.grey,
                       filled: true,
                     ),
                   ),
@@ -81,9 +81,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                     width: double.infinity,
                     height: 50,
                     decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        colors: [Color(0xFF8E2DE2), Colors.black],
-                      ),
+                     color: Colors.orangeAccent,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: ElevatedButton(
@@ -99,6 +97,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                       child: const Text(
                         "Send Reset Email",
                         style: TextStyle(
+                          color: Colors.black,
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
                           letterSpacing: 1,

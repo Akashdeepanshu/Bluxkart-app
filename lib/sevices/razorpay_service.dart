@@ -79,16 +79,24 @@ class RazorpayService {
     print("✅ Payment Successful: ${response.paymentId}");
 
     await controller.placemyOrder(
-        orderpaymentmethod: "Razorpay - ${controller.selectedPaymentMethod}",
-        totalAmount: controller.totalP.value
+      orderpaymentmethod: "Razorpay",
+      totalAmount: controller.totalP.value,
     );
 
     await controller.clearCart();
 
-    Get.snackbar("Payment Success", "Your order has been placed successfully!",
-        colorText: Colors.white, backgroundColor: Colors.green);
-    Get.offAll(Home());
+    Get.snackbar(
+      "Payment Success",
+      "Your order has been placed successfully!",
+      colorText: Colors.white,
+      backgroundColor: Colors.green,
+      duration: const Duration(seconds: 2),
+    );
+
+    await Future.delayed(const Duration(seconds: 2));
+    Get.offAll(() => Home());
   }
+
 
   void _handlePaymentError(PaymentFailureResponse response) {
     print("❌ Payment Failed: ${response.message}");

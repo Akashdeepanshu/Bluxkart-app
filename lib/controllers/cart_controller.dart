@@ -1,12 +1,9 @@
 import 'package:bluxkart/constants/consts.dart';
 import 'package:bluxkart/constants/firebase_const.dart';
-import 'package:bluxkart/constants/strings.dart' as profileController;
-import 'package:bluxkart/controllers/auth_controller.dart';
-import 'package:bluxkart/sevices/firestore_services.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:bluxkart/sevices/shiprocket_service.dart'; // Import Shiprocket API service
+
 class cartController extends GetxController {
   var totalP = 0.obs;
 
@@ -104,9 +101,11 @@ class cartController extends GetxController {
       await Future.wait(
         productsnapshot.map((product) {
           return firestore.collection(cartCollection).doc(product.id).delete();
-        }),
+        }).cast<Future<void>>().toList(),
       );
     }
   }
+
+
 
 }

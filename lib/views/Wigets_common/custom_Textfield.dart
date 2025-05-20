@@ -14,13 +14,21 @@ Widget customTextField({String? title, String? hint , controller,isPass}){
         obscureText: isPass,
         controller: controller,
         decoration: InputDecoration(
+          enabledBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: Colors.grey),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: Colors.grey),
+            borderRadius: BorderRadius.circular(12),
+          ),
           hintText: hint,
           hintStyle: TextStyle(color: Colors.white54),
           isDense: true,
           fillColor: Colors.grey,
           filled: true,
           border: InputBorder.none,
-          focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.black)),
+
 
         ),
       )

@@ -39,7 +39,7 @@ class homeproducts extends StatelessWidget{
 
 
                 return Container(
-                  height: 340,
+                  height: 360,
                   child: GridView.builder(
                       itemCount: data.length ,
                       shrinkWrap: true,
@@ -81,7 +81,7 @@ class homeproducts extends StatelessWidget{
                                     if (discount > 0)
                                       Row(
                                         children: [
-                                          "\$${price.toStringAsFixed(2)}"
+                                          "\₹${price.toStringAsFixed(2)}"
                                               .text
                                               .lineThrough
                                               .color(Colors.redAccent)
@@ -91,7 +91,7 @@ class homeproducts extends StatelessWidget{
                                           "-${discount.toInt()}%".text.color(Colors.orangeAccent).size(13).make(),
                                         ],
                                       ),
-                                    "\$${discountedPrice.toStringAsFixed(2)}"
+                                    "\₹${discountedPrice.toStringAsFixed(2)}"
                                         .text
                                         .color(Colors.greenAccent)
                                         .semiBold
